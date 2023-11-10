@@ -3,6 +3,10 @@
 
 This README accompanies the test HTML file extracted from the original `ril_export.html`.
 
+## Colab Notebook
+
+https://colab.research.google.com/github/RickGCartmanland/Pocket/blob/main/facebook_redirect_urls.ipynb
+
 ## Description
 
 The test HTML file contains a random selection of 100 items from the original file, with the exclusion of any items containing links to Facebook.
