@@ -1,23 +1,20 @@
 
 import requests
-from bs4 import BeautifulSoup
 
-def fetch_and_parse_html(url):
-    """
-    Fetches an HTML file from the given URL and parses it with BeautifulSoup.
-
-    Parameters:
-    url (str): URL of the HTML file to fetch.
-
-    Returns:
-    BeautifulSoup object: Parsed HTML content, or None if the fetch was unsuccessful.
-    """
+def fetch_html_from_url(url):
+    """ Fetch HTML content from a URL. """
     response = requests.get(url)
-
     if response.status_code == 200:
-        html_content = response.text
-        soup = BeautifulSoup(html_content, 'html.parser')
-        return soup
+        return response.text
     else:
         print("Failed to download the file. Error code:", response.status_code)
+        return None
+
+def read_html_from_file(file_path):
+    """ Read HTML content from a local file. """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return file.read()
+    except FileNotFoundError:
+        print("File not found:", file_path)
         return None
